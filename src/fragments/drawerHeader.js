@@ -4,7 +4,7 @@ import React from "react";
 export default function DrawerHeader() {
     return (
         <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Some weird mixed demo
         </Typography>
     )
 }

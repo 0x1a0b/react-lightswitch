@@ -1,10 +1,39 @@
 import Typography from '@material-ui/core/Typography';
-import React from "react";
+import React, {useEffect} from "react";
+import History from "../History";
 
-export default function Gibberish() {
+export default function Gibberish({location}) {
+    const [greetingName, setGreetingName] = React.useState('there')
+    const [initialLoad, setInitialLoad] = React.useState(0)
+
+    const updateHistory = () => {
+        const pushUrl = `/gibberish?name=${greetingName}`
+        History.push(pushUrl)
+    }
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search)
+        if (initialLoad === 0) {
+            const queryParamName = params.get('name')
+            setGreetingName(queryParamName ? queryParamName : 'there')
+            setInitialLoad(1)
+        } else {
+            updateHistory()
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        greetingName
+    ])
+
     return (
         <div>
-            <Typography paragraph>
+            <Typography variant="h1">
+                Gibberish
+            </Typography>
+            <Typography variant="h2" gutterBottom>
+                Hello {greetingName}!
+            </Typography>
+            <Typography variant="body1" gutterBottom>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
                 facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
@@ -16,7 +45,7 @@ export default function Gibberish() {
                 arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
                 donec massa sapien faucibus et molestie ac.
             </Typography>
-            <Typography paragraph>
+            <Typography variant="body1" gutterBottom>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                 facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
                 tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat

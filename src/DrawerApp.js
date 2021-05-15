@@ -11,8 +11,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Gibberish from "./pages/gibberish";
+import Empty from "./pages/empty";
+import Laberisch from "./pages/laberisch";
 import DrawerSidebar from "./fragments/drawerSidebar";
 import DrawerHeader from "./fragments/drawerHeader";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import History from "./History";
+import {Typography} from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -76,6 +81,11 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(3),
     },
+    appBarBottom: {
+        top: 'auto',
+        alignItems: 'center',
+        bottom: 0,
+    }
 }));
 
 export default function DrawerApp() {
@@ -93,53 +103,64 @@ export default function DrawerApp() {
 
     return (
         <div className={classes.root}>
-            <CssBaseline />
-            <AppBar
-                position="fixed"
-                className={clsx(classes.appBar, {
-                    [classes.appBarShift]: open,
-                })}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(classes.menuButton, {
-                            [classes.hide]: open,
-                        })}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <DrawerHeader />
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                variant="permanent"
-                className={clsx(classes.drawer, {
-                    [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
-                })}
-                classes={{
-                    paper: clsx({
+            <BrowserRouter history={History}>
+                <CssBaseline />
+                <AppBar
+                    position="fixed"
+                    className={clsx(classes.appBar, {
+                        [classes.appBarShift]: open,
+                    })}
+                >
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            className={clsx(classes.menuButton, {
+                                [classes.hide]: open,
+                            })}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <DrawerHeader />
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    variant="permanent"
+                    className={clsx(classes.drawer, {
                         [classes.drawerOpen]: open,
                         [classes.drawerClose]: !open,
-                    }),
-                }}
-            >
-                <div className={classes.toolbar}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <DrawerSidebar />
-            </Drawer>
-            <main className={classes.content}>
-                <div className={classes.toolbar} />
-                <Gibberish />
-            </main>
+                    })}
+                    classes={{
+                        paper: clsx({
+                            [classes.drawerOpen]: open,
+                            [classes.drawerClose]: !open,
+                        }),
+                    }}
+                >
+                    <div className={classes.toolbar}>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                        </IconButton>
+                    </div>
+                    <Divider />
+                    <DrawerSidebar />
+                </Drawer>
+                <main className={classes.content}>
+                    <div className={classes.toolbar} />
+                    <Switch>
+                        <Route exact path="/gibberish" component={Gibberish} />
+                        <Route exact path="/laberisch" component={Laberisch} />
+                        <Route component={Empty} />
+                    </Switch>
+                </main>
+                <AppBar position="fixed" color="default" className={classes.appBarBottom}>
+                    <Typography variant="subtitle1" gutterBottom>
+                        Hello there
+                    </Typography>
+                </AppBar>
+            </BrowserRouter>
         </div>
     );
 }
