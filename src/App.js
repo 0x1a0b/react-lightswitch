@@ -1,12 +1,9 @@
+import DrawerApp from "./DrawerApp";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-            Hello
-        </p>
-      </header>
+        <DrawerApp />
     </div>
   );
 }
