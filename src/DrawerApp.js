@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,7 +17,11 @@ import DrawerSidebar from "./fragments/drawerSidebar";
 import DrawerHeader from "./fragments/drawerHeader";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import History from "./History";
-import {Typography} from "@material-ui/core";
+import { createMuiTheme, ThemeProvider, Typography} from "@material-ui/core";
+import {
+    BrightnessHigh,
+    BrightnessLow,
+} from "@material-ui/icons";
 
 const drawerWidth = 240;
 
@@ -85,13 +89,26 @@ const useStyles = makeStyles((theme) => ({
         top: 'auto',
         alignItems: 'center',
         bottom: 0,
-    }
+    },
+    grow: {
+        flexGrow: 1,
+    },
+    growToggle: {
+        display: 'flex',
+        float: 'right',
+    },
 }));
 
 export default function DrawerApp() {
     const classes = useStyles();
-    const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const [themeMode, setThemeMode] = React.useState('light');
+
+    const theme = createMuiTheme({
+        palette: {
+            type: themeMode,
+        },
+    });
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -101,66 +118,89 @@ export default function DrawerApp() {
         setOpen(false);
     };
 
+    const handeColorChange = () => {
+      if (themeMode === 'light') {
+          setThemeMode('dark')
+      } else {
+          setThemeMode('light')
+      }
+    };
+
     return (
-        <div className={classes.root}>
-            <BrowserRouter history={History}>
-                <CssBaseline />
-                <AppBar
-                    position="fixed"
-                    className={clsx(classes.appBar, {
-                        [classes.appBarShift]: open,
-                    })}
-                >
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            edge="start"
-                            className={clsx(classes.menuButton, {
-                                [classes.hide]: open,
-                            })}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <DrawerHeader />
-                    </Toolbar>
-                </AppBar>
-                <Drawer
-                    variant="permanent"
-                    className={clsx(classes.drawer, {
-                        [classes.drawerOpen]: open,
-                        [classes.drawerClose]: !open,
-                    })}
-                    classes={{
-                        paper: clsx({
+        <ThemeProvider theme={theme}>
+            <div className={classes.root}>
+                <BrowserRouter history={History}>
+                    <CssBaseline />
+                    <AppBar
+                        position="fixed"
+                        className={clsx(classes.appBar, {
+                            [classes.appBarShift]: open,
+                        })}
+                    >
+                        <Toolbar>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                onClick={handleDrawerOpen}
+                                edge="start"
+                                className={clsx(classes.menuButton, {
+                                    [classes.hide]: open,
+                                })}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <DrawerHeader />
+                            <div className={classes.grow}>
+                                <div className={classes.growToggle}>
+                                { themeMode === 'light' ?
+                                    <IconButton color="inherit" component="span" onClick={handeColorChange}>
+                                        <BrightnessLow />
+                                    </IconButton>
+                                    :
+                                    <IconButton color="inherit" component="span" onClick={handeColorChange}>
+                                        <BrightnessHigh />
+                                    </IconButton>
+                                }
+                                </div>
+                            </div>
+                        </Toolbar>
+                    </AppBar>
+                    <Drawer
+                        variant="permanent"
+                        className={clsx(classes.drawer, {
                             [classes.drawerOpen]: open,
                             [classes.drawerClose]: !open,
-                        }),
-                    }}
-                >
-                    <div className={classes.toolbar}>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                        </IconButton>
-                    </div>
-                    <Divider />
-                    <DrawerSidebar />
-                </Drawer>
-                <main className={classes.content}>
-                    <div className={classes.toolbar} />
-                    <Switch>
-                        <Route exact path="/gibberish" component={Gibberish} />
-                        <Route exact path="/laberisch" component={Laberisch} />
-                        <Route component={Empty} />
-                    </Switch>
-                </main>
-                <AppBar position="fixed" color="default" className={classes.appBarBottom}>
-                    <Typography variant="subtitle1" gutterBottom>
-                        Hello there
-                    </Typography>
-                </AppBar>
-            </BrowserRouter>
-        </div>
+                        })}
+                        classes={{
+                            paper: clsx({
+                                [classes.drawerOpen]: open,
+                                [classes.drawerClose]: !open,
+                            }),
+                        }}
+                    >
+                        <div className={classes.toolbar}>
+                            <IconButton onClick={handleDrawerClose}>
+                                {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                            </IconButton>
+                        </div>
+                        <Divider />
+                        <DrawerSidebar />
+                    </Drawer>
+                    <main className={classes.content}>
+                        <div className={classes.toolbar} />
+                        <Switch>
+                            <Route exact path="/gibberish" component={Gibberish} />
+                            <Route exact path="/laberisch" component={Laberisch} />
+                            <Route component={Empty} />
+                        </Switch>
+                    </main>
+                    <AppBar position="fixed" color="default" className={classes.appBarBottom}>
+                        <Typography variant="subtitle1" gutterBottom>
+                            Hello there
+                        </Typography>
+                    </AppBar>
+                </BrowserRouter>
+            </div>
+        </ThemeProvider>
     );
 }
