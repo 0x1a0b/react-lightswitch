@@ -7,6 +7,7 @@ import React from "react";
 import HomeIcon from '@material-ui/icons/Home';
 import BathtubIcon from '@material-ui/icons/Bathtub';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
+import DeckIcon from '@material-ui/icons/Deck';
 import {Link} from "react-router-dom"
 
 export default function DrawerSidebar() {
@@ -25,6 +26,10 @@ export default function DrawerSidebar() {
                 <ListItem button key='Laberisch' component={Link} to='/laberisch'>
                     <ListItemIcon> <ChildFriendlyIcon/> </ListItemIcon>
                     <ListItemText primary='Laberisch' />
+                </ListItem>
+                <ListItem button key='Diagram' component={Link} to='/diagram'>
+                    <ListItemIcon> <DeckIcon/> </ListItemIcon>
+                    <ListItemText primary='Diagram' />
                 </ListItem>
             </List>
         </div>

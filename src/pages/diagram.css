@@ -1,0 +1,6 @@
+.dark .bi.bi-diagram {
+    background-color: black;
+}
+.light .bi.bi-diagram {
+    background-color: white;
+}

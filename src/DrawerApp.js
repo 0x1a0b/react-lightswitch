@@ -31,6 +31,7 @@ import {
     BrightnessLow,
 } from "@material-ui/icons";
 import ls from 'local-storage'
+import DiagramTest from "./pages/diagram";
 
 const drawerWidth = 240;
 
@@ -209,6 +210,7 @@ export default function DrawerApp() {
                         <Switch>
                             <Route exact path="/gibberish" component={Gibberish} />
                             <Route exact path="/laberisch" component={Laberisch} />
+                            <Route exact path="/diagram" render={() => <DiagramTest materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>
