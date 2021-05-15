@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -15,13 +15,22 @@ import Empty from "./pages/empty";
 import Laberisch from "./pages/laberisch";
 import DrawerSidebar from "./fragments/drawerSidebar";
 import DrawerHeader from "./fragments/drawerHeader";
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {
+    BrowserRouter,
+    Switch,
+    Route
+} from "react-router-dom";
 import History from "./History";
-import { createMuiTheme, ThemeProvider, Typography} from "@material-ui/core";
+import {
+    createMuiTheme,
+    ThemeProvider,
+    Typography
+} from "@material-ui/core";
 import {
     BrightnessHigh,
     BrightnessLow,
 } from "@material-ui/icons";
+import ls from 'local-storage'
 
 const drawerWidth = 240;
 
@@ -106,7 +115,7 @@ export default function DrawerApp() {
 
     const theme = createMuiTheme({
         palette: {
-            type: themeMode,
+            type: ls.get('colorTheme') || themeMode,
         },
     });
 
@@ -120,11 +129,20 @@ export default function DrawerApp() {
 
     const handeColorChange = () => {
       if (themeMode === 'light') {
+          ls.set('colorTheme', 'dark')
           setThemeMode('dark')
       } else {
+          ls.set('colorTheme', 'light')
           setThemeMode('light')
       }
     };
+
+    useEffect(() => {
+        const storedTheme = ls.get('colorTheme')
+        if (storedTheme === 'dark') {
+            setThemeMode('dark')
+        }
+    }, [])
 
     return (
         <ThemeProvider theme={theme}>
