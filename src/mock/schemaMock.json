@@ -1,5 +1,9 @@
 {
+
   "name": "testy",
+
+  "height": "350px",
+
   "diagram": {
     "nodes": [
       { "id": "node-1", "content": "Node 1", "coordinates": [250, 60],  "disableDrag": true },
@@ -13,4 +17,5 @@
       { "input": "node-1",  "output": "node-4", "label": "Link 3", "readonly": true }
     ]
   }
+
 }
