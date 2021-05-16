@@ -8,6 +8,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import BathtubIcon from '@material-ui/icons/Bathtub';
 import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
 import FilterVintageIcon from '@material-ui/icons/FilterVintage';
+import GestureIcon from '@material-ui/icons/Gesture';
 import DeckIcon from '@material-ui/icons/Deck';
 import {Link} from "react-router-dom"
 
@@ -35,6 +36,10 @@ export default function DrawerSidebar() {
                 <ListItem button key='Mock' component={Link} to='/mock'>
                     <ListItemIcon> <FilterVintageIcon/> </ListItemIcon>
                     <ListItemText primary='Mock' />
+                </ListItem>
+                <ListItem button key='Vhost' component={Link} to='/vhost'>
+                    <ListItemIcon> <GestureIcon/> </ListItemIcon>
+                    <ListItemText primary='Vhost' />
                 </ListItem>
             </List>
         </div>
