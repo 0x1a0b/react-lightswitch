@@ -1,0 +1,202 @@
+{
+    "schema": {
+        "nodes": [
+            {
+                "id": "inst-blabla",
+                "content": "blabla",
+                "coordinates": [
+                    640,
+                    100
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "vhost-Vhost1",
+                "content": "Vhost1",
+                "coordinates": [
+                    740,
+                    50
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "vhost-Vhost2",
+                "content": "Vhost2",
+                "coordinates": [
+                    740,
+                    100
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "vhost-Vhost3",
+                "content": "Vhost3",
+                "coordinates": [
+                    740,
+                    150
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "svg-svg1",
+                "content": "svg1",
+                "coordinates": [
+                    520,
+                    100
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "ip-127.0.0.1",
+                "content": "127.0.0.1",
+                "coordinates": [
+                    400,
+                    75
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "arec-a1.ip1",
+                "content": "a1.ip1",
+                "coordinates": [
+                    220,
+                    50
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "cname-cname1.a1.ip1",
+                "content": "cname1.a1.ip1",
+                "coordinates": [
+                    50,
+                    25
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "cname-cname2.a1.ip1",
+                "content": "cname2.a1.ip1",
+                "coordinates": [
+                    50,
+                    75
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "ip-127.0.0.2",
+                "content": "127.0.0.2",
+                "coordinates": [
+                    400,
+                    125
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "arec-a1.ip2",
+                "content": "a1.ip2",
+                "coordinates": [
+                    220,
+                    100
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "cname-cname1.a1.ip2",
+                "content": "cname1.a1.ip2",
+                "coordinates": [
+                    50,
+                    125
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "arec-a2.ip2",
+                "content": "a2.ip2",
+                "coordinates": [
+                    220,
+                    150
+                ],
+                "disableDrag": true
+            },
+            {
+                "id": "cname-cname1.a2.ip2",
+                "content": "cname1.a2.ip2",
+                "coordinates": [
+                    50,
+                    175
+                ],
+                "disableDrag": true
+            }
+        ],
+        "links": [
+            {
+                "input": "vhost-Vhost1",
+                "output": "inst-blabla",
+                "readonly": true
+            },
+            {
+                "input": "vhost-Vhost2",
+                "output": "inst-blabla",
+                "readonly": true
+            },
+            {
+                "input": "vhost-Vhost3",
+                "output": "inst-blabla",
+                "readonly": true
+            },
+            {
+                "input": "svg-svg1",
+                "output": "inst-blabla",
+                "readonly": true
+            },
+            {
+                "input": "svg-svg1",
+                "output": "ip-127.0.0.1",
+                "readonly": true
+            },
+            {
+                "input": "ip-127.0.0.1",
+                "output": "arec-a1.ip1",
+                "readonly": true
+            },
+            {
+                "input": "cname-cname1.a1.ip1",
+                "output": "arec-a1.ip1",
+                "readonly": true
+            },
+            {
+                "input": "cname-cname2.a1.ip1",
+                "output": "arec-a1.ip1",
+                "readonly": true
+            },
+            {
+                "input": "svg-svg1",
+                "output": "ip-127.0.0.2",
+                "readonly": true
+            },
+            {
+                "input": "ip-127.0.0.2",
+                "output": "arec-a1.ip2",
+                "readonly": true
+            },
+            {
+                "input": "cname-cname1.a1.ip2",
+                "output": "arec-a1.ip2",
+                "readonly": true
+            },
+            {
+                "input": "ip-127.0.0.2",
+                "output": "arec-a2.ip2",
+                "readonly": true
+            },
+            {
+                "input": "cname-cname1.a2.ip2",
+                "output": "arec-a2.ip2",
+                "readonly": true
+            }
+        ]
+    },
+    "title": "blabla",
+    "height": "250px",
+    "minlength": ""
+}

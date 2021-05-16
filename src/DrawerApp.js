@@ -34,6 +34,7 @@ import ls from 'local-storage'
 import DiagramTest from "./pages/diagram";
 import MockDiagram from "./pages/mockDiagram";
 import VhostDiagram from "./pages/vhostDiagram";
+import GoDiagram from "./pages/goHost";
 
 const drawerWidth = 240;
 
@@ -215,6 +216,7 @@ export default function DrawerApp() {
                             <Route exact path="/diagram" render={() => <DiagramTest materialThemeName={themeMode}/>} />
                             <Route exact path="/mock" render={() => <MockDiagram materialThemeName={themeMode}/>} />
                             <Route exact path="/vhost" render={() => <VhostDiagram materialThemeName={themeMode}/>} />
+                            <Route exact path="/gohost" render={() => <GoDiagram materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>
