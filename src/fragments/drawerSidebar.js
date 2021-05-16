@@ -30,6 +30,7 @@ export default function DrawerSidebar() {
                     <ListItemIcon> <ChildFriendlyIcon/> </ListItemIcon>
                     <ListItemText primary='Laberisch' />
                 </ListItem>
+                <Divider />
                 <ListItem button key='Diagram' component={Link} to='/diagram'>
                     <ListItemIcon> <DeckIcon/> </ListItemIcon>
                     <ListItemText primary='Diagram' />
@@ -46,6 +47,7 @@ export default function DrawerSidebar() {
                     <ListItemIcon> <RowingIcon/> </ListItemIcon>
                     <ListItemText primary='Gohost' />
                 </ListItem>
+                <Divider />
             </List>
         </div>
     )
