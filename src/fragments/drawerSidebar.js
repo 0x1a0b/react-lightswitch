@@ -11,6 +11,7 @@ import FilterVintageIcon from '@material-ui/icons/FilterVintage';
 import GestureIcon from '@material-ui/icons/Gesture';
 import DeckIcon from '@material-ui/icons/Deck';
 import RowingIcon from '@material-ui/icons/Rowing';
+import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 import {Link} from "react-router-dom"
 
 export default function DrawerSidebar() {
@@ -46,6 +47,11 @@ export default function DrawerSidebar() {
                 <ListItem button key='Gohost' component={Link} to='/gohost'>
                     <ListItemIcon> <RowingIcon/> </ListItemIcon>
                     <ListItemText primary='Gohost' />
+                </ListItem>
+                <Divider />
+                <ListItem button key='SvgTest' component={Link} to='/svgtest'>
+                    <ListItemIcon> <RecordVoiceOverIcon /> </ListItemIcon>
+                    <ListItemText primary='SvgTest' />
                 </ListItem>
                 <Divider />
             </List>
