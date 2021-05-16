@@ -1,6 +1,26 @@
 .dark .bi.bi-diagram {
-    background-color: black;
+    background-color: #424242;
+    border: .07rem solid rgba(0, 0, 0, 0.87);
 }
-.light .bi.bi-diagram {
-    background-color: white;
+
+.dark .bi.bi-diagram .bi.bi-diagram-node.bi-diagram-node-default {
+    border: .07rem solid #648dae;
+    background-color: #90caf9;
+    color: #fff;
+    text-shadow: 1px 1px 2px #303030;
+}
+
+.dark .bi.bi-diagram .bi-link-canvas-layer .bi-diagram-link .bi-diagram-link-label {
+    color: #fff;
+    text-shadow: 1px 1px 2px #303030;
+    background-color: #2196f3;
+    border-color: #1976d2;
+}
+
+.dark .bi.bi-diagram .bi-link-canvas-layer .bi-diagram-link.readonly-link .bi-link-path {
+    stroke: #c7dbeb;
+}
+
+.dark .bi.bi-diagram .bi.bi-diagram-node .bi-port-wrapper .bi-input-ports .bi-diagram-port, .bi.bi-diagram .bi.bi-diagram-node .bi-port-wrapper .bi-output-ports .bi-diagram-port {
+    background-color: rgba(0, 0, 0, .12);
 }
