@@ -16,6 +16,7 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import AppleIcon from '@material-ui/icons/Apple';
 import EmojiSymbolsIcon from '@material-ui/icons/EmojiSymbols';
 import FlipIcon from '@material-ui/icons/Flip';
+import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
 import {Link} from "react-router-dom"
 
 export default function DrawerSidebar() {
@@ -76,6 +77,11 @@ export default function DrawerSidebar() {
                 <ListItem button key='Treeviz' component={Link} to='/treeviz'>
                     <ListItemIcon> <FlipIcon /> </ListItemIcon>
                     <ListItemText primary='Treeviz' />
+                </ListItem>
+                <Divider />
+                <ListItem button key='ReactFlow' component={Link} to='/reactflow'>
+                    <ListItemIcon> <EmojiNatureIcon /> </ListItemIcon>
+                    <ListItemText primary='ReactFlow' />
                 </ListItem>
             </List>
         </div>

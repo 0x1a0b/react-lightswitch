@@ -40,6 +40,7 @@ import ReactDiagraph from "./pages/diagraph";
 import Viser from "./pages/viser";
 import Visx from "./pages/visx";
 import Treeviz from "./pages/treeviz";
+import EdgesFlow from "./pages/reactFlow";
 
 const drawerWidth = 240;
 
@@ -227,6 +228,7 @@ export default function DrawerApp() {
                             <Route exact path="/viser" render={() => <Viser materialThemeName={themeMode}/>} />
                             <Route exact path="/visx" render={() => <Visx materialThemeName={themeMode}/>} />
                             <Route exact path="/treeviz" render={() => <Treeviz materialThemeName={themeMode}/>} />
+                            <Route exact path="/reactflow" render={() => <EdgesFlow materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>
