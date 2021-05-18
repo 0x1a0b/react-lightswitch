@@ -18,8 +18,14 @@ export default function GoDiagram(props) {
     }, [props.materialThemeName])
     return (
         <div>
+            <Typography variant="h2" gutterBottom>
+                beautiful-react-diagrams (generated json from go code)
+            </Typography>
             <Typography variant="h6">
                 {name}
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+                https://beautifulinteractions.github.io/beautiful-react-diagrams/#/Linking%20nodes
             </Typography>
             <div style={{ height: size }} className={styleRoot}>
                 <Diagram schema={schema} onChange={onChange} />
