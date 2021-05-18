@@ -36,6 +36,7 @@ import MockDiagram from "./pages/mockDiagram";
 import VhostDiagram from "./pages/vhostDiagram";
 import GoDiagram from "./pages/goHost";
 import SvgTest from "./pages/svgTest";
+import ReactDiagraph from "./pages/diagraph";
 
 const drawerWidth = 240;
 
@@ -219,6 +220,7 @@ export default function DrawerApp() {
                             <Route exact path="/vhost" render={() => <VhostDiagram materialThemeName={themeMode}/>} />
                             <Route exact path="/gohost" render={() => <GoDiagram materialThemeName={themeMode}/>} />
                             <Route exact path="/svgtest" render={() => <SvgTest />} />
+                            <Route exact path="/diagraph" render={() => <ReactDiagraph materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>
