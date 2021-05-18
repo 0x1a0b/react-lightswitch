@@ -82,7 +82,7 @@ export default function VhostDiagram(props) {
     return (
         <div>
             <Typography variant="h6" gutterBottom>
-                Vhost {name}
+                Vhost {name} (beautiful-react-diagrams)
             </Typography>
             <div style={{ height: size }} className={styleRoot}>
                 <Diagram schema={schema} onChange={onChange} />

@@ -19,7 +19,7 @@ export default function MockDiagram(props) {
     return (
         <div>
             <Typography variant="h6">
-                Plain Empty.. {name} !
+                Plain Empty.. {name} ! (beautiful-react-diagrams)
             </Typography>
             <div style={{ height: size }} className={styleRoot}>
                 <Diagram schema={schema} onChange={onChange} />
