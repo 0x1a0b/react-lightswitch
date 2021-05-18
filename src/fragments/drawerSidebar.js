@@ -15,6 +15,7 @@ import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AppleIcon from '@material-ui/icons/Apple';
 import EmojiSymbolsIcon from '@material-ui/icons/EmojiSymbols';
+import FlipIcon from '@material-ui/icons/Flip';
 import {Link} from "react-router-dom"
 
 export default function DrawerSidebar() {
@@ -70,6 +71,11 @@ export default function DrawerSidebar() {
                 <ListItem button key='Visx' component={Link} to='/visx'>
                     <ListItemIcon> <EmojiSymbolsIcon /> </ListItemIcon>
                     <ListItemText primary='Visx' />
+                </ListItem>
+                <Divider />
+                <ListItem button key='Treeviz' component={Link} to='/treeviz'>
+                    <ListItemIcon> <FlipIcon /> </ListItemIcon>
+                    <ListItemText primary='Treeviz' />
                 </ListItem>
             </List>
         </div>
