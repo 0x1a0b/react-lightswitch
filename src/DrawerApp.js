@@ -37,6 +37,7 @@ import VhostDiagram from "./pages/vhostDiagram";
 import GoDiagram from "./pages/goHost";
 import SvgTest from "./pages/svgTest";
 import ReactDiagraph from "./pages/diagraph";
+import Viser from "./pages/viser";
 
 const drawerWidth = 240;
 
@@ -221,6 +222,7 @@ export default function DrawerApp() {
                             <Route exact path="/gohost" render={() => <GoDiagram materialThemeName={themeMode}/>} />
                             <Route exact path="/svgtest" render={() => <SvgTest />} />
                             <Route exact path="/diagraph" render={() => <ReactDiagraph materialThemeName={themeMode}/>} />
+                            <Route exact path="/viser" render={() => <Viser materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>

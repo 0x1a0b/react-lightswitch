@@ -13,6 +13,7 @@ import DeckIcon from '@material-ui/icons/Deck';
 import RowingIcon from '@material-ui/icons/Rowing';
 import RecordVoiceOverIcon from '@material-ui/icons/RecordVoiceOver';
 import AssessmentIcon from '@material-ui/icons/Assessment';
+import AppleIcon from '@material-ui/icons/Apple';
 import {Link} from "react-router-dom"
 
 export default function DrawerSidebar() {
@@ -58,6 +59,11 @@ export default function DrawerSidebar() {
                 <ListItem button key='Diagraph' component={Link} to='/diagraph'>
                     <ListItemIcon> <AssessmentIcon /> </ListItemIcon>
                     <ListItemText primary='Diagraph' />
+                </ListItem>
+                <Divider />
+                <ListItem button key='Viser' component={Link} to='/viser'>
+                    <ListItemIcon> <AppleIcon /> </ListItemIcon>
+                    <ListItemText primary='Viser' />
                 </ListItem>
                 <Divider />
             </List>
