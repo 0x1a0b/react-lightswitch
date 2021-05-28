@@ -22,10 +22,10 @@ jobs:
       - name: install deps
         run: npm install
 
-      - name: build
-        run: CI="" npm run deploy
+      - name: app build
+        run: CI="" npm run build
 
-      - name: build
+      - name: spa deploy
         run: |
           git config --global user.email ${{ secrets.GITHUBMAIL }}
           git config --global user.name ${{ secrets.GITHUBUSER }}
