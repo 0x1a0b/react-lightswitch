@@ -27,8 +27,8 @@ jobs:
 
       - name: build
         run: |
-          git config --global user.email ${{ secrets.GITHUB_MAIL }}
-          git config --global user.name ${{ secrets.GITHUB_USER }}
-          git remote set-url origin https://${{ secrets.GITHUB_PAGES_TOKEN }}@github.com/${{ secrets.GITHUB_USER }}/${{ secrets.GITHUB_REPO }}.git
+          git config --global user.email ${{ secrets.GITHUBMAIL }}
+          git config --global user.name ${{ secrets.GITHUBUSER }}
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.GITHUBUSER }}/${{ secrets.GITHUBREPO }}.git
           npm run deploy
 
