@@ -27,6 +27,7 @@ jobs:
           git config --global user.email ${{ secrets.GITHUBMAIL }}
           git config --global user.name ${{ secrets.GITHUBUSER }}
           git remote set-url origin https://git:${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.GITHUBUSER }}/${{ secrets.GITHUBREPO }}.git
-          jq --arg homepage "https://0x1a0b.github.io/react-lightswitch/" '. + {homepage: $homepage}' ./package.json > ./package.json
+          jq -c -M -S --arg homepage "https://0x1a0b.github.io/react-lightswitch/" '. + {homepage: $homepage}' ./package.json > ./package-new.json
+          mv package-new.json package.json
           CI="" npm run deploy
 
