@@ -16,6 +16,7 @@
     "beautiful-react-diagrams": "^0.5.1",
     "closest": "0.0.1",
     "clsx": "^1.1.1",
+    "d3": "^7.0.0",
     "dagre": "^0.8.5",
     "history": "^5.0.0",
     "local-storage": "^2.0.0",

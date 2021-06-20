@@ -43,6 +43,7 @@ import Treeviz from "./pages/treeviz";
 import EdgesFlow from "./pages/reactFlow";
 import ReactDiagrams from "./pages/reactDiagrams";
 import D3view from "./pages/d3view";
+import D3Effect from "./pages/d3effect";
 
 const drawerWidth = 240;
 
@@ -233,6 +234,7 @@ export default function DrawerApp() {
                             <Route exact path="/reactflow" render={() => <EdgesFlow materialThemeName={themeMode}/>} />
                             <Route exact path="/reactdiagrams" render={() => <ReactDiagrams materialThemeName={themeMode}/>} />
                             <Route exact path="/d3view" render={() => <D3view />} />
+                            <Route exact path="/d3effect" render={() => <D3Effect />} />
                             <Route component={Empty} />
                         </Switch>
                     </main>

@@ -20,6 +20,7 @@ import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
 import FiberDvrIcon from '@material-ui/icons/FiberDvr';
 import {Link} from "react-router-dom"
 import BrushIcon from '@material-ui/icons/Brush';
+import AcUnitIcon from '@material-ui/icons/AcUnit';
 
 export default function DrawerSidebar() {
     return (
@@ -94,6 +95,11 @@ export default function DrawerSidebar() {
                 <ListItem button key='d3tree' component={Link} to='/d3view'>
                     <ListItemIcon> <BrushIcon /> </ListItemIcon>
                     <ListItemText primary='d3tree' />
+                </ListItem>
+                <Divider />
+                <ListItem button key='d3effect' component={Link} to='/d3effect'>
+                    <ListItemIcon> <AcUnitIcon /> </ListItemIcon>
+                    <ListItemText primary='d3effect' />
                 </ListItem>
             </List>
         </div>
