@@ -44,6 +44,7 @@ import EdgesFlow from "./pages/reactFlow";
 import ReactDiagrams from "./pages/reactDiagrams";
 import D3view from "./pages/d3view";
 import D3Effect from "./pages/d3effect";
+import D3Expansion from "./pages/d3expansion";
 
 const drawerWidth = 240;
 
@@ -235,6 +236,7 @@ export default function DrawerApp() {
                             <Route exact path="/reactdiagrams" render={() => <ReactDiagrams materialThemeName={themeMode}/>} />
                             <Route exact path="/d3view" render={() => <D3view />} />
                             <Route exact path="/d3effect" render={() => <D3Effect />} />
+                            <Route exact path="/d3expansion" render={() => <D3Expansion />} />
                             <Route component={Empty} />
                         </Switch>
                     </main>

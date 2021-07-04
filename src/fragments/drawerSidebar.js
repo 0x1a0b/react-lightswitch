@@ -21,6 +21,7 @@ import FiberDvrIcon from '@material-ui/icons/FiberDvr';
 import {Link} from "react-router-dom"
 import BrushIcon from '@material-ui/icons/Brush';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
+import BorderStyleIcon from '@material-ui/icons/BorderStyle';
 
 export default function DrawerSidebar() {
     return (
@@ -100,6 +101,10 @@ export default function DrawerSidebar() {
                 <ListItem button key='d3effect' component={Link} to='/d3effect'>
                     <ListItemIcon> <AcUnitIcon /> </ListItemIcon>
                     <ListItemText primary='d3effect' />
+                </ListItem>
+                <ListItem button key='d3expansion' component={Link} to='/d3expansion'>
+                    <ListItemIcon> <BorderStyleIcon /> </ListItemIcon>
+                    <ListItemText primary='d3expansion' />
                 </ListItem>
             </List>
         </div>
