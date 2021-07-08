@@ -22,6 +22,7 @@ import {Link} from "react-router-dom"
 import BrushIcon from '@material-ui/icons/Brush';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import BorderStyleIcon from '@material-ui/icons/BorderStyle';
+import ClassIcon from '@material-ui/icons/Class';
 
 export default function DrawerSidebar() {
     return (
@@ -105,6 +106,11 @@ export default function DrawerSidebar() {
                 <ListItem button key='d3expansion' component={Link} to='/d3expansion'>
                     <ListItemIcon> <BorderStyleIcon /> </ListItemIcon>
                     <ListItemText primary='d3expansion' />
+                </ListItem>
+                <Divider />
+                <ListItem button key='g6test' component={Link} to='/g6test'>
+                    <ListItemIcon> <ClassIcon /> </ListItemIcon>
+                    <ListItemText primary='g6test' />
                 </ListItem>
             </List>
         </div>
