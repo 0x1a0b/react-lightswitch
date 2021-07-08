@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { data } from './g6data';
 import G6 from '@antv/g6';
+import Typography from "@material-ui/core/Typography";
 
 export default function G6Test() {
     const ref = React.useRef(null);
@@ -42,5 +43,17 @@ export default function G6Test() {
         graph.render();
     }, []);
 
-    return <div ref={ref}></div>;
+    return (
+        <div>
+            <Typography variant="h6" gutterBottom>
+                G6
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+                https://g6.antv.vision/en/docs/manual/advanced/g6InReact
+                https://github.com/baizn/g6-in-react/blob/master/pages/tutorital.jsx
+            </Typography>
+
+            <div ref={ref}></div>
+        </div>
+    );
 }
