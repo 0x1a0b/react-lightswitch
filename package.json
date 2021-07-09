@@ -13,7 +13,7 @@
     "@visx/gradient": "^1.7.0",
     "@visx/group": "^1.7.0",
     "@visx/hierarchy": "^1.7.0",
-    "@visx/shape": "^1.8.0",
+    "@visx/shape": "^1.16.0",
     "beautiful-react-diagrams": "^0.5.1",
     "closest": "0.0.1",
     "clsx": "^1.1.1",
