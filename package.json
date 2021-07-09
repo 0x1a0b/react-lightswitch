@@ -33,6 +33,7 @@
     "react-scripts": "4.0.3",
     "resize-observer-polyfill": "^1.5.1",
     "treeviz-react": "^0.4.0",
+    "tslib": "^2.3.0",
     "viser-graph-react": "^1.0.1",
     "web-vitals": "^1.1.2"
   },
