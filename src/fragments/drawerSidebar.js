@@ -23,6 +23,7 @@ import BrushIcon from '@material-ui/icons/Brush';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import BorderStyleIcon from '@material-ui/icons/BorderStyle';
 import ClassIcon from '@material-ui/icons/Class';
+import BlurCircularIcon from '@material-ui/icons/BlurCircular';
 
 export default function DrawerSidebar() {
     return (
@@ -111,6 +112,10 @@ export default function DrawerSidebar() {
                 <ListItem button key='g6test' component={Link} to='/g6test'>
                     <ListItemIcon> <ClassIcon /> </ListItemIcon>
                     <ListItemText primary='g6test' />
+                </ListItem>
+                <ListItem button key='g6static' component={Link} to='/g6static'>
+                    <ListItemIcon> <BlurCircularIcon /> </ListItemIcon>
+                    <ListItemText primary='g6static' />
                 </ListItem>
             </List>
         </div>
