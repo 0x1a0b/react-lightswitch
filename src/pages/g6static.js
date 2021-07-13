@@ -42,6 +42,8 @@ const newGraph = (container, boxSize) => {
 
 }
 
+const colors = { a: '#588c73', b: '#f2e394', c: '#d96459', d: '#f2ae72' };
+
 export default function G6Static() {
     const ref = React.useRef(null);
     let graph = null;
@@ -59,6 +61,11 @@ export default function G6Static() {
             graph.node(function (node) {
                 return {
                     label: node.id,
+                    color: colors[node.type],
+                    style: {
+                        fill: colors[node.type],
+                        lineWidth: 0,
+                    },
                 };
             });
         }

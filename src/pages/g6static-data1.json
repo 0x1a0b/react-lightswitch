@@ -1,83 +1,108 @@
 {
   "id": "Modeling Methods",
+  "type": "a",
   "children": [
     {
       "id": "Classification",
+      "type": "b",
       "children": [
         {
-          "id": "Logistic regression"
+          "id": "Logistic regression",
+          "type": "c"
         },
         {
-          "id": "Linear discriminant analysis"
+          "id": "Linear discriminant analysis",
+          "type": "c"
         },
         {
-          "id": "Rules"
+          "id": "Rules",
+          "type": "c"
         },
         {
-          "id": "Decision trees"
+          "id": "Decision trees",
+          "type": "c"
         },
         {
-          "id": "Naive Bayes"
+          "id": "Naive Bayes",
+          "type": "c"
         },
         {
-          "id": "K nearest neighbor"
+          "id": "K nearest neighbor",
+          "type": "c"
         },
         {
-          "id": "Probabilistic neural network"
+          "id": "Probabilistic neural network",
+          "type": "c"
         },
         {
-          "id": "Support vector machine"
+          "id": "Support vector machine",
+          "type": "c"
         }
       ]
     },
     {
       "id": "Consensus",
+      "type": "b",
       "children": [
         {
           "id": "Models diversity",
+          "type": "c",
           "children": [
             {
-              "id": "Different initializations"
+              "id": "Different initializations",
+              "type": "d"
             },
             {
-              "id": "Different parameter choices"
+              "id": "Different parameter choices",
+              "type": "d"
             },
             {
-              "id": "Different architectures"
+              "id": "Different architectures",
+              "type": "d"
             },
             {
-              "id": "Different modeling methods"
+              "id": "Different modeling methods",
+              "type": "d"
             },
             {
-              "id": "Different training sets"
+              "id": "Different training sets",
+              "type": "d"
             },
             {
-              "id": "Different feature sets"
+              "id": "Different feature sets",
+              "type": "d"
             }
           ]
         },
         {
           "id": "Methods",
+          "type": "c",
           "children": [
             {
-              "id": "Classifier selection"
+              "id": "Classifier selection",
+              "type": "d"
             },
             {
-              "id": "Classifier fusion"
+              "id": "Classifier fusion",
+              "type": "d"
             }
           ]
         },
         {
           "id": "Common",
+          "type": "c",
           "children": [
             {
-              "id": "Bagging"
+              "id": "Bagging",
+              "type": "d"
             },
             {
-              "id": "Boosting"
+              "id": "Boosting",
+              "type": "d"
             },
             {
-              "id": "AdaBoost"
+              "id": "AdaBoost",
+              "type": "d"
             }
           ]
         }
@@ -85,24 +110,31 @@
     },
     {
       "id": "Regression",
+      "type": "b",
       "children": [
         {
-          "id": "Multiple linear regression"
+          "id": "Multiple linear regression",
+          "type": "c"
         },
         {
-          "id": "Multiple2 linear regression"
+          "id": "Multiple2 linear regression",
+          "type": "c"
         },
         {
-          "id": "Partial least squares"
+          "id": "Partial least squares",
+          "type": "c"
         },
         {
-          "id": "Multi-layer feedforward neural network"
+          "id": "Multi-layer feedforward neural network",
+          "type": "c"
         },
         {
-          "id": "General regression neural network"
+          "id": "General regression neural network",
+          "type": "c"
         },
         {
-          "id": "Support vector regression"
+          "id": "Support vector regression",
+          "type": "c"
         }
       ]
     }
