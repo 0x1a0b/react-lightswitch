@@ -4,6 +4,8 @@ import G6 from '@antv/g6';
 import Typography from "@material-ui/core/Typography";
 import data1 from './g6static-data1.json';
 import Slider from '@material-ui/core/Slider';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 const newGraph = (container, boxSize) => {
     return new G6.TreeGraph({
@@ -48,6 +50,7 @@ export default function G6Static() {
     let graph = null;
     const [initial, setInitial] = React.useState(false);
     const [boxSize, setBoxSize] = React.useState(600);
+    const [lastHoverObject, setLastHoverObject] = React.useState({id: "test", type: "a", description: "testeeeeeeeee"});
 
     useEffect(() => {
         const container = ReactDOM.findDOMNode(ref.current);
@@ -67,6 +70,20 @@ export default function G6Static() {
                     },
                 };
             });
+
+            graph.on('node:mouseenter', (evt) => {
+                const { item } = evt;
+                graph.setItemState(item, 'hover', true);
+                if (item._cfg.type === "node") {
+                    setLastHoverObject({id: item._cfg.model.id, description: "addinfos", type: item._cfg.model.type }) ;
+                }
+                console.log(item);
+            });
+
+            graph.on('node:mouseleave', (evt) => {
+                const { item } = evt;
+                graph.setItemState(item, 'hover', false);
+            });
         }
         graph.data(data1);
         graph.render();
@@ -84,6 +101,7 @@ export default function G6Static() {
             <Typography variant="body1" gutterBottom>
                 https://g6.antv.vision/en/examples/tree/radialtree#radialDendrogram
             </Typography>
+            <hr />
             <div style={{width: "500px"}}>
                 <Slider
                     defaultValue={boxSize}
@@ -95,8 +113,32 @@ export default function G6Static() {
                     min={600}
                     max={1500}
                 />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => { setLastHoverObject({id: "mimi", description: "nanaaaa", type: "b"}) }}
+                >
+                    Data A
+                </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => { setLastHoverObject({id: "yaaa", description: "ayayay", type: "c"}) }}
+                >
+                    Data B
+                </Button>
             </div>
             <div ref={ref}></div>
+            <hr />
+            <Paper variant="outlined" square >
+                <Typography variant="h6" gutterBottom>
+                    {lastHoverObject.id}
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    {lastHoverObject.description} ({lastHoverObject.type})
+                </Typography>
+            </Paper>
+            <hr />
         </div>
     );
 }
