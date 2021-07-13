@@ -1,13 +1,15 @@
 import Typography from '@material-ui/core/Typography';
 import React, {useEffect} from "react";
 import History from "../History";
+import VariablesGetCRAContextRoot from '../Variables';
 
+const root = VariablesGetCRAContextRoot()
 export default function Gibberish({location}) {
     const [greetingName, setGreetingName] = React.useState('there')
     const [initialLoad, setInitialLoad] = React.useState(0)
 
     const updateHistory = () => {
-        const pushUrl = `/gibberish?name=${greetingName}`
+        const pushUrl = root + `gibberish?name=${greetingName}`
         History.push(pushUrl)
     }
 

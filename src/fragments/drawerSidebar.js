@@ -24,96 +24,99 @@ import AcUnitIcon from '@material-ui/icons/AcUnit';
 import BorderStyleIcon from '@material-ui/icons/BorderStyle';
 import ClassIcon from '@material-ui/icons/Class';
 import BlurCircularIcon from '@material-ui/icons/BlurCircular';
+import VariablesGetCRAContextRoot from '../Variables';
+
+const root = VariablesGetCRAContextRoot()
 
 export default function DrawerSidebar() {
     return (
         <div>
             <List>
-                <ListItem button key='Home' component={Link} to='/'>
+                <ListItem button key='Home' component={Link} to={root}>
                     <ListItemIcon> <HomeIcon/> </ListItemIcon>
                     <ListItemText primary='Home' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='Gibberish' component={Link} to='/gibberish'>
+                <ListItem button key='Gibberish' component={Link} to={root + 'gibberish'}>
                     <ListItemIcon> <BathtubIcon/> </ListItemIcon>
                     <ListItemText primary='Gibberisch' />
                 </ListItem>
-                <ListItem button key='Laberisch' component={Link} to='/laberisch'>
+                <ListItem button key='Laberisch' component={Link} to={root + 'laberisch'}>
                     <ListItemIcon> <ChildFriendlyIcon/> </ListItemIcon>
                     <ListItemText primary='Laberisch' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='Diagram' component={Link} to='/diagram'>
+                <ListItem button key='Diagram' component={Link} to={root + 'diagram'}>
                     <ListItemIcon> <DeckIcon/> </ListItemIcon>
                     <ListItemText primary='Diagram' />
                 </ListItem>
-                <ListItem button key='Mock' component={Link} to='/mock'>
+                <ListItem button key='Mock' component={Link} to={root + 'mock'}>
                     <ListItemIcon> <FilterVintageIcon/> </ListItemIcon>
                     <ListItemText primary='Mock' />
                 </ListItem>
-                <ListItem button key='Vhost' component={Link} to='/vhost'>
+                <ListItem button key='Vhost' component={Link} to={root + 'vhost'}>
                     <ListItemIcon> <GestureIcon/> </ListItemIcon>
                     <ListItemText primary='Vhost' />
                 </ListItem>
-                <ListItem button key='Gohost' component={Link} to='/gohost'>
+                <ListItem button key='Gohost' component={Link} to={root + 'gohost'}>
                     <ListItemIcon> <RowingIcon/> </ListItemIcon>
                     <ListItemText primary='Gohost' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='SvgTest' component={Link} to='/svgtest'>
+                <ListItem button key='SvgTest' component={Link} to={root + 'svgtest'}>
                     <ListItemIcon> <RecordVoiceOverIcon /> </ListItemIcon>
                     <ListItemText primary='SvgTest' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='Diagraph' component={Link} to='/diagraph'>
+                <ListItem button key='Diagraph' component={Link} to={root + 'diagraph'}>
                     <ListItemIcon> <AssessmentIcon /> </ListItemIcon>
                     <ListItemText primary='Diagraph' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='Viser' component={Link} to='/viser'>
+                <ListItem button key='Viser' component={Link} to={root + 'viser'}>
                     <ListItemIcon> <AppleIcon /> </ListItemIcon>
                     <ListItemText primary='Viser' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='Visx' component={Link} to='/visx'>
+                <ListItem button key='Visx' component={Link} to={root + 'visx'}>
                     <ListItemIcon> <EmojiSymbolsIcon /> </ListItemIcon>
                     <ListItemText primary='Visx' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='Treeviz' component={Link} to='/treeviz'>
+                <ListItem button key='Treeviz' component={Link} to={root + 'treeviz'}>
                     <ListItemIcon> <FlipIcon /> </ListItemIcon>
                     <ListItemText primary='Treeviz' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='ReactFlow' component={Link} to='/reactflow'>
+                <ListItem button key='ReactFlow' component={Link} to={root + 'reactflow'}>
                     <ListItemIcon> <EmojiNatureIcon /> </ListItemIcon>
                     <ListItemText primary='ReactFlow' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='ReactDiagrams' component={Link} to='/reactdiagrams'>
+                <ListItem button key='ReactDiagrams' component={Link} to={root + 'reactdiagrams'}>
                     <ListItemIcon> <FiberDvrIcon /> </ListItemIcon>
                     <ListItemText primary='ReactDiagrams' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='d3tree' component={Link} to='/d3view'>
+                <ListItem button key='d3tree' component={Link} to={root + 'd3view'}>
                     <ListItemIcon> <BrushIcon /> </ListItemIcon>
                     <ListItemText primary='d3tree' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='d3effect' component={Link} to='/d3effect'>
+                <ListItem button key='d3effect' component={Link} to={root + 'd3effect'}>
                     <ListItemIcon> <AcUnitIcon /> </ListItemIcon>
                     <ListItemText primary='d3effect' />
                 </ListItem>
-                <ListItem button key='d3expansion' component={Link} to='/d3expansion'>
+                <ListItem button key='d3expansion' component={Link} to={root + 'd3expansion'}>
                     <ListItemIcon> <BorderStyleIcon /> </ListItemIcon>
                     <ListItemText primary='d3expansion' />
                 </ListItem>
                 <Divider />
-                <ListItem button key='g6test' component={Link} to='/g6test'>
+                <ListItem button key='g6test' component={Link} to={root + 'g6test'}>
                     <ListItemIcon> <ClassIcon /> </ListItemIcon>
                     <ListItemText primary='g6test' />
                 </ListItem>
-                <ListItem button key='g6static' component={Link} to='/g6static'>
+                <ListItem button key='g6static' component={Link} to={root + 'g6static'}>
                     <ListItemIcon> <BlurCircularIcon /> </ListItemIcon>
                     <ListItemText primary='g6static' />
                 </ListItem>

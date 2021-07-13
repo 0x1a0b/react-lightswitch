@@ -47,6 +47,9 @@ import D3Effect from "./pages/d3effect";
 import D3Expansion from "./pages/d3expansion";
 import G6Test from "./pages/g6";
 import G6Static from "./pages/g6static";
+import VariablesGetCRAContextRoot from './Variables';
+
+const root = VariablesGetCRAContextRoot()
 
 const drawerWidth = 240;
 
@@ -223,24 +226,24 @@ export default function DrawerApp() {
                     <main className={classes.content}>
                         <div className={classes.toolbar} />
                         <Switch>
-                            <Route exact path="/gibberish" component={Gibberish} />
-                            <Route exact path="/laberisch" component={Laberisch} />
-                            <Route exact path="/diagram" render={() => <DiagramTest materialThemeName={themeMode}/>} />
-                            <Route exact path="/mock" render={() => <MockDiagram materialThemeName={themeMode}/>} />
-                            <Route exact path="/vhost" render={() => <VhostDiagram materialThemeName={themeMode}/>} />
-                            <Route exact path="/gohost" render={() => <GoDiagram materialThemeName={themeMode}/>} />
-                            <Route exact path="/svgtest" render={() => <SvgTest />} />
-                            <Route exact path="/diagraph" render={() => <ReactDiagraph materialThemeName={themeMode}/>} />
-                            <Route exact path="/viser" render={() => <Viser materialThemeName={themeMode}/>} />
-                            <Route exact path="/visx" render={() => <Visx materialThemeName={themeMode}/>} />
-                            <Route exact path="/treeviz" render={() => <Treeviz materialThemeName={themeMode}/>} />
-                            <Route exact path="/reactflow" render={() => <EdgesFlow materialThemeName={themeMode}/>} />
-                            <Route exact path="/reactdiagrams" render={() => <ReactDiagrams materialThemeName={themeMode}/>} />
-                            <Route exact path="/d3view" render={() => <D3view />} />
-                            <Route exact path="/d3effect" render={() => <D3Effect />} />
-                            <Route exact path="/d3expansion" render={() => <D3Expansion />} />
-                            <Route exact path="/g6test" render={() => <G6Test />} />
-                            <Route exact path="/g6static" render={() => <G6Static />} />
+                            <Route exact path={root + "gibberish"} component={Gibberish} />
+                            <Route exact path={root + "laberisch"} component={Laberisch} />
+                            <Route exact path={root + "diagram"} render={() => <DiagramTest materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "mock"} render={() => <MockDiagram materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "vhost"} render={() => <VhostDiagram materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "gohost"} render={() => <GoDiagram materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "svgtest"} render={() => <SvgTest />} />
+                            <Route exact path={root + "diagraph"} render={() => <ReactDiagraph materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "viser"} render={() => <Viser materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "visx"} render={() => <Visx materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "treeviz"} render={() => <Treeviz materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "reactflow"} render={() => <EdgesFlow materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "reactdiagrams"} render={() => <ReactDiagrams materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "d3view"} render={() => <D3view />} />
+                            <Route exact path={root + "d3effect"} render={() => <D3Effect />} />
+                            <Route exact path={root + "d3expansion"} render={() => <D3Expansion />} />
+                            <Route exact path={root + "g6test"} render={() => <G6Test />} />
+                            <Route exact path={root + "g6static"} render={() => <G6Static />} />
                             <Route component={Empty} />
                         </Switch>
                     </main>
