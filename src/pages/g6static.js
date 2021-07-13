@@ -24,7 +24,6 @@ const newGraph = (container, boxSize) => {
                         return true;
                     },
                 },
-                'drag-canvas',
                 'zoom-canvas',
             ],
         },
