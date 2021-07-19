@@ -44,16 +44,50 @@ const newGraph = (container, boxSize) => {
 
 }
 
-const colors = { a: '#588c73', b: '#f2e394', c: '#d96459', d: '#f2ae72' };
+const colors = {
+    dark: {
+        a: '#588c73',
+        b: '#f2e394',
+        c: '#d96459',
+        d: '#f2ae72',
+        lbBa: "",
+        lbSvc: "",
+        lbFe: "",
+        dnsCname: "",
+        dnsA: "",
+        dnsHost: "",
+        proxyInst: "",
+        proxyListener: "",
+        proxyVhost: "",
+    },
+    light: {
+        a: '#588c73',
+        b: '#f2e394',
+        c: '#d96459',
+        d: '#f2ae72',
+        lbBa: "",
+        lbSvc: "",
+        lbFe: "",
+        dnsCname: "",
+        dnsA: "",
+        dnsHost: "",
+        proxyInst: "",
+        proxyListener: "",
+        proxyVhost: "",
+    },
+};
 
-export default function G6Static() {
+export default function G6Static(props) {
     const ref = React.useRef(null);
     let graph = null;
     const [initial, setInitial] = React.useState(false);
     const [boxSize, setBoxSize] = React.useState(600);
-    const [lastHoverObject, setLastHoverObject] = React.useState({id: "test", type: "a", description: "testeeeeeeeee"});
+    const [colorScheme, setColorScheme] = React.useState("dark");
+    const [lastHoverObject, setLastHoverObject] = React.useState({id: "details", type: "a", description: "Hover a node for details"});
 
     useEffect(() => {
+        setColorScheme(props.materialThemeName)
+
         const container = ReactDOM.findDOMNode(ref.current);
         if (initial === false) {
             container.innerHTML = "";
@@ -64,9 +98,9 @@ export default function G6Static() {
             graph.node(function (node) {
                 return {
                     label: node.id,
-                    color: colors[node.type],
+                    color: colors[props.materialThemeName][node.type],
                     style: {
-                        fill: colors[node.type],
+                        fill: colors[props.materialThemeName][node.type],
                         lineWidth: 0,
                     },
                 };
@@ -92,10 +126,10 @@ export default function G6Static() {
         setInitial(false);
 
         console.log(graph)
-    }, [boxSize]);
+    }, [boxSize, props.materialThemeName]);
 
     return (
-        <div id="g6static">
+        <div id="g6static" className={"g6static-"+colorScheme}>
             <div className="title">
                 <Typography variant="h6" gutterBottom>
                     G6 Radial Tree
@@ -121,19 +155,12 @@ export default function G6Static() {
                     color="primary"
                     onClick={() => { setLastHoverObject({id: "mimi", description: "nanaaaa", type: "b"}) }}
                 >
-                    Data A
-                </Button>
-                <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={() => { setLastHoverObject({id: "yaaa", description: "ayayay", type: "c"}) }}
-                >
-                    Data B
+                    Update deail data
                 </Button>
             </div>
             <div ref={ref} className="graph"></div>
-            <hr />
             <div className="details">
+                <hr />
                 <Paper variant="outlined" square >
                     <Typography variant="h6" gutterBottom>
                         {lastHoverObject.id}
@@ -142,8 +169,8 @@ export default function G6Static() {
                         {lastHoverObject.description} ({lastHoverObject.type})
                     </Typography>
                 </Paper>
+                <hr />
             </div>
-            <hr />
         </div>
     );
 }

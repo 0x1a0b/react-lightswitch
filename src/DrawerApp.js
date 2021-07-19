@@ -243,7 +243,7 @@ export default function DrawerApp() {
                             <Route exact path={root + "d3effect"} render={() => <D3Effect />} />
                             <Route exact path={root + "d3expansion"} render={() => <D3Expansion />} />
                             <Route exact path={root + "g6test"} render={() => <G6Test />} />
-                            <Route exact path={root + "g6static"} render={() => <G6Static />} />
+                            <Route exact path={root + "g6static"} render={() => <G6Static materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>
