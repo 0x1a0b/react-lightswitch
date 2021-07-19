@@ -6,6 +6,7 @@ import data1 from './g6static-data1.json';
 import Slider from '@material-ui/core/Slider';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import './g6static.css'
 
 const newGraph = (container, boxSize) => {
     return new G6.TreeGraph({
@@ -94,15 +95,17 @@ export default function G6Static() {
     }, [boxSize]);
 
     return (
-        <div>
-            <Typography variant="h6" gutterBottom>
-                G6 Radial Tree
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-                https://g6.antv.vision/en/examples/tree/radialtree#radialDendrogram
-            </Typography>
+        <div id="g6static">
+            <div className="title">
+                <Typography variant="h6" gutterBottom>
+                    G6 Radial Tree
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    https://g6.antv.vision/en/examples/tree/radialtree#radialDendrogram
+                </Typography>
+            </div>
             <hr />
-            <div style={{width: "500px"}}>
+            <div className="options" style={{width: "500px"}}>
                 <Slider
                     defaultValue={boxSize}
                     onChange={ (e, val) => setBoxSize(val) }
@@ -128,16 +131,18 @@ export default function G6Static() {
                     Data B
                 </Button>
             </div>
-            <div ref={ref}></div>
+            <div ref={ref} className="graph"></div>
             <hr />
-            <Paper variant="outlined" square >
-                <Typography variant="h6" gutterBottom>
-                    {lastHoverObject.id}
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    {lastHoverObject.description} ({lastHoverObject.type})
-                </Typography>
-            </Paper>
+            <div className="details">
+                <Paper variant="outlined" square >
+                    <Typography variant="h6" gutterBottom>
+                        {lastHoverObject.id}
+                    </Typography>
+                    <Typography variant="body1" gutterBottom>
+                        {lastHoverObject.description} ({lastHoverObject.type})
+                    </Typography>
+                </Paper>
+            </div>
             <hr />
         </div>
     );

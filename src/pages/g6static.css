@@ -1,0 +1,16 @@
+#g6static {
+    overflow: auto;
+    height: 100%;
+}
+
+#g6static .graph {
+    overflow: hidden;
+}
+
+#g6static .details {
+    height: 100%;
+}
+
+
+
+
