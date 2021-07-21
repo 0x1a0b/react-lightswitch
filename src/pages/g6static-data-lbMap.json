@@ -1,0 +1,37 @@
+{
+  "id": "192.168.21.165",
+  "props": {
+    "type": "lbFe",
+    "description": "blabla"
+  },
+  "children": [
+    {
+      "id": ":80-tcp websvc",
+      "props": {
+        "port": 80,
+        "proto": "tcp",
+        "name": "websvc",
+        "type": "lbSvc",
+        "description": "blabla"
+      },
+      "children": [
+        {
+          "id": "webserver1:80",
+          "props": {
+            "ip": "10.0.0.1",
+            "type": "lbBa",
+            "description": "blabla"
+          }
+        },
+        {
+          "id": "webserver2:80",
+          "props": {
+            "ip": "10.0.1.1",
+            "type": "lbBa",
+            "description": "blabla"
+          }
+        }
+      ]
+    }
+  ]
+}

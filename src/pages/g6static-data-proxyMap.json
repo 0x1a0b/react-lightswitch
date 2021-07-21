@@ -1,0 +1,28 @@
+{
+  "id": "wwwwebpuz",
+  "props": {
+    "type": "proxyInst"
+  },
+  "children": [
+    {
+      "id": ":8080",
+      "props": {
+        "type": "proxyListener"
+      },
+      "children": [
+        {
+          "id": "www.default.com",
+          "props": {
+            "type": "proxyVhost"
+          }
+        },
+        {
+          "id": "api.example.com",
+          "props": {
+            "type": "proxyVhost"
+          }
+        }
+      ]
+    }
+  ]
+}

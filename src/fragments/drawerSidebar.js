@@ -24,6 +24,7 @@ import AcUnitIcon from '@material-ui/icons/AcUnit';
 import BorderStyleIcon from '@material-ui/icons/BorderStyle';
 import ClassIcon from '@material-ui/icons/Class';
 import BlurCircularIcon from '@material-ui/icons/BlurCircular';
+import EditLocationIcon from '@material-ui/icons/EditLocation';
 import VariablesGetCRAContextRoot from '../Variables';
 
 const root = VariablesGetCRAContextRoot()
@@ -119,6 +120,10 @@ export default function DrawerSidebar() {
                 <ListItem button key='g6static' component={Link} to={root + 'g6static'}>
                     <ListItemIcon> <BlurCircularIcon /> </ListItemIcon>
                     <ListItemText primary='g6static' />
+                </ListItem>
+                <ListItem button key='g6dynamic' component={Link} to={root + 'g6dynamic'}>
+                    <ListItemIcon> <EditLocationIcon /> </ListItemIcon>
+                    <ListItemText primary='g6dynamic' />
                 </ListItem>
             </List>
         </div>

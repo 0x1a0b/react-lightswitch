@@ -1,0 +1,32 @@
+{
+  "id": "192.168.21.165",
+  "props": {
+    "type": "dnsHost",
+    "description": "blabla"
+  },
+  "children": [
+    {
+      "id": "default.com",
+      "props": {
+        "type": "dnsA",
+        "description": "blabla"
+      },
+      "children": [
+        {
+          "id": "www.default.com",
+          "props": {
+            "type": "dnsCname",
+            "description": "blabla"
+          }
+        },
+        {
+          "id": "web.default.com",
+          "props": {
+            "type": "dnsCname",
+            "description": "blabla"
+          }
+        }
+      ]
+    }
+  ]
+}

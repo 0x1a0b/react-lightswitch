@@ -1,0 +1,28 @@
+
+
+#g6dyn {
+    /*overflow-y: scroll;
+    height: 120%;*/
+    overflow-y: scroll;
+    padding: 5px;
+    margin: 5px;
+    height: 1800px;
+}
+
+/*#g6dyn .graph {
+    overflow: hidden;
+}*/
+
+#g6dyn .options {
+    margin-left: 15px;
+}
+
+#g6dyn .details {
+    height: 200%;
+}
+
+#g6dyn .scrollForce {
+    height: 200px;
+}
+
+

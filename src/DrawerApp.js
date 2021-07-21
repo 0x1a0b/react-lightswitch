@@ -48,6 +48,7 @@ import D3Expansion from "./pages/d3expansion";
 import G6Test from "./pages/g6";
 import G6Static from "./pages/g6static";
 import VariablesGetCRAContextRoot from './Variables';
+import G6Dynamic from "./pages/g6dynamic";
 
 const root = VariablesGetCRAContextRoot()
 
@@ -244,6 +245,7 @@ export default function DrawerApp() {
                             <Route exact path={root + "d3expansion"} render={() => <D3Expansion />} />
                             <Route exact path={root + "g6test"} render={() => <G6Test />} />
                             <Route exact path={root + "g6static"} render={() => <G6Static materialThemeName={themeMode}/>} />
+                            <Route exact path={root + "g6dynamic"} render={() => <G6Dynamic materialThemeName={themeMode}/>} />
                             <Route component={Empty} />
                         </Switch>
                     </main>

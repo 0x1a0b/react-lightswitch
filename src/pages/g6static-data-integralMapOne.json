@@ -1,0 +1,82 @@
+{
+  "id": "wwwwebpuz",
+  "props": {
+    "type": "proxyInst",
+    "description": "blabla"
+  },
+  "children": [
+    {
+      "id": ":8443",
+      "props": {
+        "type": "proxyListener",
+        "description": "blabla"
+      },
+      "children": [
+        {
+          "id": "vh-default.com",
+          "props": {
+            "default": true,
+            "aliases": [
+              "www.default.com"
+            ],
+            "type": "proxyVhost",
+            "description": "blabla"
+          },
+          "children": [
+            {
+              "id": ":80-tcp websvc",
+              "props": {
+                "port": 80,
+                "proto": "tcp",
+                "name": "websvc",
+                "type": "lbSvc",
+                "description": "blabla"
+              },
+              "children": [
+                {
+                  "id": "192.168.21.165",
+                  "props": {
+                    "type": "lbFe",
+                    "description": "blabla"
+                  },
+                  "children": [
+                    {
+                      "id": "a-default.com",
+                      "props": {
+                        "type": "dnsA",
+                        "description": "blabla"
+                      },
+                      "children": [
+                        {
+                          "id": "www.default.com",
+                          "props": {
+                            "type": "dnsCname",
+                            "description": "blabla"
+                          }
+                        },
+                        {
+                          "id": "web.default.com",
+                          "props": {
+                            "type": "dnsCname",
+                            "description": "blabla"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "api.example.com",
+          "props": {
+            "type": "proxyVhost",
+            "description": "blabla"
+          }
+        }
+      ]
+    }
+  ]
+}
