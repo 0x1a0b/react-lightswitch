@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-lightswitch/static/css/main.3fd4a283.chunk.css",
-    "main.js": "/react-lightswitch/static/js/main.68e4cae8.chunk.js",
-    "main.js.map": "/react-lightswitch/static/js/main.68e4cae8.chunk.js.map",
+    "main.css": "/react-lightswitch/static/css/main.45b37113.chunk.css",
+    "main.js": "/react-lightswitch/static/js/main.0afad3a0.chunk.js",
+    "main.js.map": "/react-lightswitch/static/js/main.0afad3a0.chunk.js.map",
     "runtime-main.js": "/react-lightswitch/static/js/runtime-main.4c01d905.js",
     "runtime-main.js.map": "/react-lightswitch/static/js/runtime-main.4c01d905.js.map",
     "static/css/2.b7f486fa.chunk.css": "/react-lightswitch/static/css/2.b7f486fa.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.6d40491b.chunk.js.map": "/react-lightswitch/static/js/2.6d40491b.chunk.js.map",
     "index.html": "/react-lightswitch/index.html",
     "static/css/2.b7f486fa.chunk.css.map": "/react-lightswitch/static/css/2.b7f486fa.chunk.css.map",
-    "static/css/main.3fd4a283.chunk.css.map": "/react-lightswitch/static/css/main.3fd4a283.chunk.css.map",
+    "static/css/main.45b37113.chunk.css.map": "/react-lightswitch/static/css/main.45b37113.chunk.css.map",
     "static/js/2.6d40491b.chunk.js.LICENSE.txt": "/react-lightswitch/static/js/2.6d40491b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4c01d905.js",
     "static/css/2.b7f486fa.chunk.css",
     "static/js/2.6d40491b.chunk.js",
-    "static/css/main.3fd4a283.chunk.css",
-    "static/js/main.68e4cae8.chunk.js"
+    "static/css/main.45b37113.chunk.css",
+    "static/js/main.0afad3a0.chunk.js"
   ]
 }
