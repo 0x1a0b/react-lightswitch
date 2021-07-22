@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import './g6dataDisplay.css'
 import ls from "local-storage";
 
-const newGraph = (container, boxSize) => {
+const newGraph = (container, boxSize, theme) => {
     return new G6.TreeGraph({
         container: container,
         width: boxSize,
@@ -27,10 +27,27 @@ const newGraph = (container, boxSize) => {
                     },
                 },
                 'zoom-canvas',
+                'drag-canvas',
             ],
         },
         defaultNode: {
-            size: 26,
+            size: 30,
+            cursor: "crosshair",
+            labelCfg: {
+                positions: 'center',
+                style: {
+                    fontSize: 12,
+                }
+            },
+            style: {
+                lineWidth: 1,
+            },
+        },
+        defaultEdge: {
+            style: {
+                opacity: 0.6,
+                stroke: colors[theme]["edge"].stroke,
+            },
         },
         layout: {
             type: 'dendrogram',
@@ -45,26 +62,70 @@ const newGraph = (container, boxSize) => {
 
 const colors = {
     dark: {
-        lbBa: "#2a6fdb",
-        lbSvc: "#48d6d2",
-        lbFe: "#fefcbf",
-        dnsCname: "#543c52",
-        dnsA: "#f55951",
-        dnsHost: "#edd2cb",
-        proxyInst: "#e0f0ea",
-        proxyListener: "#95adbe",
-        proxyVhost: "#574f7d",
+        edge: {
+           stroke: "#D9D9D9",
+        },
+        lbBa: {
+            fill: "#2a6fdb",
+            label: "#fff",
+            border: "#888",
+        },
+        lbSvc: {
+            fill: "#48d6d2",
+        },
+        lbFe: {
+            fill: "#fefcbf",
+        },
+        dnsCname: {
+            fill: "#543c52",
+        },
+        dnsA: {
+            fill: "#f55951",
+        },
+        dnsHost: {
+            fill: "#edd2cb",
+        },
+        proxyInst: {
+            fill: "#e0f0ea",
+        },
+        proxyListener: {
+            fill: "#95adbe",
+        },
+        proxyVhost: {
+            fill: "#574f7d",
+        },
     },
     light: {
-        lbBa: "#2a6fdb",
-        lbSvc: "#48d6d2",
-        lbFe: "#fefcbf",
-        dnsCname: "#543c52",
-        dnsA: "#f55951",
-        dnsHost: "#edd2cb",
-        proxyInst: "#e0f0ea",
-        proxyListener: "#95adbe",
-        proxyVhost: "#574f7d",
+        edge: {
+            stroke: "#B3B3B3",
+        },
+        lbBa: {
+            fill: "#2a6fdb",
+        },
+        lbSvc: {
+            fill: "#48d6d2",
+        },
+        lbFe: {
+            fill: "#fefcbf",
+        },
+        dnsCname: {
+            fill: "#543c52",
+        },
+        dnsA: {
+            fill: "#f55951",
+        },
+        dnsHost: {
+            fill: "#edd2cb",
+        },
+        proxyInst: {
+            fill: "#e0f0ea",
+        },
+        proxyListener: {
+            fill: "#95adbe",
+        },
+        proxyVhost: {
+            fill: "#574f7d",
+        },
     },
 };
 
@@ -100,15 +161,19 @@ export default function G6DataDisplay(props) {
            container.innerHTML = "";
         }
         if (!graph) {
-            graph = newGraph(container, boxSize);
+            graph = newGraph(container, boxSize, props.materialThemeName);
 
             graph.node(function (node) {
                 return {
-                    label: node.id,
-                    color: colors[props.materialThemeName][node.props.type],
+                    label: node.props.label,
+                    labelCfg: {
+                        style: {
+                            fill: colors[props.materialThemeName][node.props.type].label,
+                        }
+                    },
                     style: {
-                        fill: colors[props.materialThemeName][node.props.type],
-                        lineWidth: 0,
+                        fill: colors[props.materialThemeName][node.props.type].fill,
+                        stroke: colors[props.materialThemeName][node.props.type].border,
                     },
                 };
             });
@@ -130,7 +195,7 @@ export default function G6DataDisplay(props) {
     }, [boxSize, props.materialThemeName, props.graphdata]);
 
     return (
-        <div id="g6dyn" className={"g6static-"+colorScheme}>
+        <div id="g6dyn" className={"g6dyn-"+colorScheme}>
             <div className="title">
                 <Typography variant="h2" gutterBottom>
                     { props.graphdata.id }
@@ -142,7 +207,7 @@ export default function G6DataDisplay(props) {
             <hr />
             <div className="options" style={{width: "500px"}}>
                 <Slider
-                    defaultValue={ ls.get('g6zoom') }
+                    defaultValue={ ls.get('g6zoom') || 600 }
                     onChange={ (e, val) => {setBoxSize(val); ls.set('g6zoom', val)} }
                     valueLabelDisplay="auto"
                     step={100}

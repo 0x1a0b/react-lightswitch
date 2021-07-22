@@ -1,21 +1,24 @@
 {
-  "id": "wwwwebpuz",
+  "id": "adgvknjjnwe40i9fjw3f",
   "props": {
     "type": "proxyInst",
+    "label": "wwwweb",
     "description": "blabla"
   },
   "children": [
     {
-      "id": ":8443",
+      "id": "234fi89j8fasdf2",
       "props": {
         "type": "proxyListener",
+        "label": ":8443",
         "description": "blabla"
       },
       "children": [
         {
-          "id": "vh-default.com",
+          "id": "3f89jr24f983v",
           "props": {
             "default": true,
+            "label": "vh-default",
             "aliases": [
               "www.default.com"
             ],
@@ -24,8 +27,9 @@
           },
           "children": [
             {
-              "id": ":80-tcp websvc",
+              "id": "f3kj89u2kfg56",
               "props": {
+                "label": ":80-tcp websvc",
                 "port": 80,
                 "proto": "tcp",
                 "name": "websvc",
@@ -34,30 +38,34 @@
               },
               "children": [
                 {
-                  "id": "192.168.21.165",
+                  "id": "fcd3445gn78h1d94jf",
                   "props": {
                     "type": "lbFe",
+                    "label": "192.168.21.165",
                     "description": "blabla"
                   },
                   "children": [
                     {
-                      "id": "a-default.com",
+                      "id": "2f484g5huitgeh2yhd7yf490",
                       "props": {
                         "type": "dnsA",
+                        "label": "e-default.com",
                         "description": "blabla"
                       },
                       "children": [
                         {
-                          "id": "www.default.com",
+                          "id": "43fj892uf82u3f",
                           "props": {
                             "type": "dnsCname",
+                            "label": "www.default.com",
                             "description": "blabla"
                           }
                         },
                         {
-                          "id": "web.default.com",
+                          "id": "f423j82uf40i",
                           "props": {
                             "type": "dnsCname",
+                            "label": "web.default.com",
                             "description": "blabla"
                           }
                         }
@@ -70,9 +78,10 @@
           ]
         },
         {
-          "id": "api.example.com",
+          "id": "u834uyf8f3484fiu",
           "props": {
             "type": "proxyVhost",
+            "label": "api.example.com",
             "description": "blabla"
           }
         }
